@@ -9,3 +9,9 @@ Needs to run on port 8080
 ## Microclient (React)
 Needs to run on port 8081
 
+## Microclient (Vue + Vite)
+Instead of webpack uses vite-plugin-federation compatible with Webpack
+https://github.com/originjs/vite-plugin-federation
+
+npm run build && npm run preview (for the module federation to expose the remote entry file)
+

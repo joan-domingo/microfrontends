@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import "./styles.css";
 
-const FirstApp = lazy(() => import("FIRST_APP/app"));
+const FirstApp = lazy(() => import("host_app_react/app"));
 
 const App = () => {
     const [name, setName] = React.useState(null);

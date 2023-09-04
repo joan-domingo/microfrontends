@@ -46,8 +46,12 @@ module.exports = {
             template: path.resolve(__dirname, "public", "index.html"),
         }),
         new ModuleFederationPlugin({
-            name: "FIRST_APP",
+            name: "host_app_react",
             filename: "remoteEntry.js",
+            remotes: {
+                remote_app_vue: "remote_app_vue@http://localhost:5005/assets/remoteEntry.js",
+                remote_app_react: "remote_app_react@http://localhost:8081/remoteEntry.js",
+            },
             exposes: {
                 "./app": "./src/components/App",
             },

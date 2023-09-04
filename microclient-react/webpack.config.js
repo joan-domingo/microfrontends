@@ -42,9 +42,13 @@ module.exports = {
             template: path.resolve(__dirname, "public", "index.html"),
         }),
         new ModuleFederationPlugin({
-            name: "MICRO",
+            name: "remote_app_react",
+            filename: "remoteEntry.js",
             remotes: {
-                FIRST_APP: "FIRST_APP@http://localhost:8080/remoteEntry.js",
+                host_app_react: "host_app_react@http://localhost:8080/remoteEntry.js",
+            },
+            exposes: {
+                "./test": "./src/Test",
             },
         }),
     ],
